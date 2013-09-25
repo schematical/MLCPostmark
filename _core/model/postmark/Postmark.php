@@ -59,7 +59,7 @@ class Mail_Postmark
 	*/
 	public function __construct()
 	{
-		if (class_exists('Mail_Postmark_Adapter')) {
+		if (false){//class_exists('Mail_Postmark_Adapter', false)) {
 			require_once('Adapter_Interface.php');
 			
 			$reflection = new ReflectionClass('Mail_Postmark_Adapter');
@@ -499,7 +499,7 @@ class Mail_Postmark
 	*/
 	private function _log($logData)
 	{
-		if (class_exists('Mail_Postmark_Adapter')) {
+		if (class_exists('Mail_Postmark_Adapter', false)) {
 			Mail_Postmark_Adapter::log($logData);
 		}
 	}
